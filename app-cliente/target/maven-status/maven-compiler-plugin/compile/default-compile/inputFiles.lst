@@ -1,0 +1,12 @@
+/Users/fernandovieira/Downloads/git-infnet/devops/cliente/src/main/java/br/edu/infnet/cliente/model/ClienteModel.java
+/Users/fernandovieira/Downloads/git-infnet/devops/cliente/src/main/java/br/edu/infnet/cliente/controller/ClienteController.java
+/Users/fernandovieira/Downloads/git-infnet/devops/cliente/src/main/java/br/edu/infnet/cliente/service/ClienteService.java
+/Users/fernandovieira/Downloads/git-infnet/devops/cliente/src/main/java/br/edu/infnet/cliente/assembler/ClienteModelAssembler.java
+/Users/fernandovieira/Downloads/git-infnet/devops/cliente/src/main/java/br/edu/infnet/cliente/config/modelmapper/ModelMapperConfig.java
+/Users/fernandovieira/Downloads/git-infnet/devops/cliente/src/main/java/br/edu/infnet/cliente/model/ClienteInput.java
+/Users/fernandovieira/Downloads/git-infnet/devops/cliente/src/main/java/br/edu/infnet/cliente/exceptions/ClienteNaoEncontradoException.java
+/Users/fernandovieira/Downloads/git-infnet/devops/cliente/src/main/java/br/edu/infnet/cliente/model/domain/Cliente.java
+/Users/fernandovieira/Downloads/git-infnet/devops/cliente/src/main/java/br/edu/infnet/cliente/ClienteApplication.java
+/Users/fernandovieira/Downloads/git-infnet/devops/cliente/src/main/java/br/edu/infnet/cliente/exceptions/CpfInvalidoException.java
+/Users/fernandovieira/Downloads/git-infnet/devops/cliente/src/main/java/br/edu/infnet/cliente/assembler/ClienteInputDisassembler.java
+/Users/fernandovieira/Downloads/git-infnet/devops/cliente/src/main/java/br/edu/infnet/cliente/repository/ClienteRepository.java
