@@ -10,6 +10,9 @@ pool:
   vmImage: ubuntu-latest
   demands: Limit -equals DisAbleParallel 
 
+strategy:
+  parallel: 1
+
 steps:
 - task: Maven@3
   inputs:
