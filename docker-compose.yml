@@ -9,6 +9,24 @@ volumes:
   grafana_data:
 
 services:
+  app:
+    build:
+      context: ./cliente-api
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    container_name: cliente-api
+#    entrypoint: dockerize -wait tcp://cliente_db:3306 -timeout 40s docker-entrypoint.sh
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://cliente_db:3306/cliente
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    tty: true
+    depends_on:
+      -   cliente_db
+    networks:
+      - cliente_network
+
   cliente_db:
     image: mysql:latest
     command: --innodb-use-native-aio=0
