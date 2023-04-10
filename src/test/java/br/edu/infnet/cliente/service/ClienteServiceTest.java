@@ -4,11 +4,15 @@ import br.edu.infnet.cliente.exceptions.ClienteNaoEncontradoException;
 import br.edu.infnet.cliente.exceptions.CpfInvalidoException;
 import br.edu.infnet.cliente.model.domain.Cliente;
 import br.edu.infnet.cliente.repository.ClienteRepository;
+import org.hibernate.service.spi.InjectService;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -17,17 +21,17 @@ import java.util.Collection;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-//@SpringBootTest
-@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(MockitoExtension.class)
 class ClienteServiceTest {
 
     @InjectMocks
     private ClienteService clienteService;
 
     @Mock
-    private ClienteRepository clienteRepository;
+    ClienteRepository repository = mock(ClienteRepository.class);
 
     @Test
     void incluir_comMockito() {
@@ -36,12 +40,11 @@ class ClienteServiceTest {
         cliente.setEmail("johndoe@email.com");
         cliente.setCpf("99999999999");
 
-//        when(clienteRepository.save(cliente)).thenReturn(new Cliente());
-//
-//        Cliente clienteSalvo = clienteService.incluir(cliente);
+        when(repository.save(cliente)).thenReturn(new Cliente());
 
-//        assertThat(clienteSalvo).isNotNull();
-        assertThat(cliente).isNotNull();
+        Cliente clienteSalvo = clienteService.incluir(cliente);
+
+        assertThat(clienteSalvo).isNotNull();
     }
 
     @Test
