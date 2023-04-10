@@ -14,7 +14,7 @@ services:
       context: ./cliente-api
       dockerfile: Dockerfile
     ports:
-      - "8080:8080"
+      - "80:8080"
     container_name: cliente-api
 #    entrypoint: dockerize -wait tcp://cliente_db:3306 -timeout 40s docker-entrypoint.sh
     environment:
