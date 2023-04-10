@@ -49,39 +49,39 @@ class ClienteServiceTest {
 
     @Test
     void obterLista() {
-//        Collection<Cliente> lista = clienteService.obterLista();
-//
-//        assertTrue(lista != null);
+        Collection<Cliente> lista = clienteService.obterLista();
+
+        assertTrue(lista != null);
     }
 
     @Test
     void incluir_validarCpfNulo() {
-//        Cliente cliente = new Cliente();
-//        cliente.setNome("john doe");
-//        cliente.setEmail("johndoe@email.com");
-//
-//        Exception exception = assertThrows(CpfInvalidoException.class, () -> clienteService.incluir(cliente));
-//
-//        assertTrue(exception.getMessage().contains("Não é possível aceitar CPF nulo"));
+        Cliente cliente = new Cliente();
+        cliente.setNome("john doe");
+        cliente.setEmail("johndoe@email.com");
+
+        Exception exception = assertThrows(CpfInvalidoException.class, () -> clienteService.incluir(cliente));
+
+        assertTrue(exception.getMessage().contains("Não é possível aceitar CPF nulo"));
     }
 
     @Test
     void incluir_validarCpfEmVazio() {
-//        Cliente cliente = new Cliente();
-//        cliente.setNome("john doe");
-//        cliente.setEmail("johndoe@email.com");
-//        cliente.setCpf(" ");
-//
-//        Exception exception = assertThrows(CpfInvalidoException.class, () -> clienteService.incluir(cliente));
-//
-//        assertTrue(exception.getMessage().contains("Não é possível aceitar CPF vazio"));
+        Cliente cliente = new Cliente();
+        cliente.setNome("john doe");
+        cliente.setEmail("johndoe@email.com");
+        cliente.setCpf(" ");
+
+        Exception exception = assertThrows(CpfInvalidoException.class, () -> clienteService.incluir(cliente));
+
+        assertTrue(exception.getMessage().contains("Não é possível aceitar CPF vazio"));
     }
 
     @Test
     void excluir_idNaoEncontrado() {
-//        Exception exception = assertThrows(ClienteNaoEncontradoException.class,
-//                () -> clienteService.excluir(123));
-//
-//        assertThat(exception.getMessage()).contains("cliente com id 123 nao encontrado");
+        Exception exception = assertThrows(ClienteNaoEncontradoException.class,
+                () -> clienteService.excluir(123));
+
+        assertThat(exception.getMessage()).contains("cliente com id 123 nao encontrado");
     }
 }
