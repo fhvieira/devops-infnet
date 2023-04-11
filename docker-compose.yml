@@ -11,7 +11,7 @@ volumes:
 services:
   app:
     build:
-      context: ./cliente-api
+      context: .
       dockerfile: Dockerfile
     ports:
       - "80:8080"
@@ -48,7 +48,7 @@ services:
 #    container_name: prometheus
 #    volumes:
 #      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
-#      - prometheus_data
+#      - prometheus_data:/prometheus
 #    networks:
 #      - cliente_network
 #    ports:
